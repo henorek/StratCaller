@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#6c6976"
+    tools:context=".MainMenuActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:id="@+id/imageView"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/logo_sc_mid2" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/newmatch_button"
+        android:layout_gravity="center"
+        android:background="@drawable/newmatch_custom_button"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/prevmatch_button"
+        android:layout_gravity="center"
+        android:background="@drawable/prevmatch_custom_button"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:id="@+id/settings_button"
+        android:layout_gravity="center"
+        android:background="@drawable/settings_custom_button"/>
+
+    <TextView
+        android:layout_width="272dp"
+        android:layout_height="154dp"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+
+</FrameLayout>
