@@ -13,10 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 public class MainMenuActivity extends Activity {
 
-    private class  DatabaseLoaderTask extends AsyncTask<String, Void, String> {
+    private class  DatabaseLoaderTask extends AsyncTask<Void, Void, Void> {
 
         TextView testText;
-        String content;
+        TacticsEntity[] content;
 
         @Override
         protected void onPreExecute() {
@@ -24,16 +24,16 @@ public class MainMenuActivity extends Activity {
         }
 
         @Override
-        protected String doInBackground(String... urls) {
+        protected Void doInBackground(Void... urls) {
             RestTemplate restTemplate = new RestTemplate();
-            final String content = restTemplate.getForObject("http://192.168.0.102:8080/SpringMVCApp/api/tactics", String.class);
+            content = restTemplate.getForObject("http://192.168.0.105:8080/SpringMVCApp/api/tactics", TacticsEntity[].class);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    testText.setText(content);
+                    testText.setText(String.valueOf(content[0].getDescription()));
                 }
             });
-            return content;
+            return null;
         }
     }
 
@@ -73,4 +73,5 @@ public class MainMenuActivity extends Activity {
             }
         });
     }
+
 }

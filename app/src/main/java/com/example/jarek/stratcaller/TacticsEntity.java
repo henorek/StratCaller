@@ -1,6 +1,8 @@
 package com.example.jarek.stratcaller;
 
-public class TacticsEntity {
+import java.io.Serializable;
+
+public class TacticsEntity implements Serializable{
     private int id;
     private String name;
     private String description;
