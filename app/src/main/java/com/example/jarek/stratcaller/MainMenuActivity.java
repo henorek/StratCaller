@@ -11,31 +11,10 @@ import android.widget.TextView;
 
 import org.springframework.web.client.RestTemplate;
 
-public class MainMenuActivity extends Activity {
+public class MainMenuActivity extends Activity implements DatabaseLoaderResponse {
 
-    private class  DatabaseLoaderTask extends AsyncTask<Void, Void, Void> {
-
-        TextView testText;
-        TacticsEntity[] content;
-
-        @Override
-        protected void onPreExecute() {
-            testText = (TextView) findViewById(R.id.textView);
-        }
-
-        @Override
-        protected Void doInBackground(Void... urls) {
-            RestTemplate restTemplate = new RestTemplate();
-            content = restTemplate.getForObject("http://192.168.0.105:8080/SpringMVCApp/api/tactics", TacticsEntity[].class);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    testText.setText(String.valueOf(content[0].getDescription()));
-                }
-            });
-            return null;
-        }
-    }
+    DatabaseLoader databaseLoaderTask = new DatabaseLoader();
+    TextView testText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +25,11 @@ public class MainMenuActivity extends Activity {
 
         setContentView(R.layout.activity_main_menu);
 
-        DatabaseLoaderTask databaseLoaderTask = new DatabaseLoaderTask();
+
+        testText = (TextView) findViewById(R.id.textView);
+
         databaseLoaderTask.execute();
+        databaseLoaderTask.delegate = this;
 
         /* Swapping screen after choosing New Match button */
         Button NewMatchButton = (Button) findViewById(R.id.newmatch_button);
@@ -74,4 +56,8 @@ public class MainMenuActivity extends Activity {
         });
     }
 
+    @Override
+    public void processFinish(TacticsEntity[] output) {
+        testText.setText(output[0].getCategory());
+    }
 }

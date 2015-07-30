@@ -98,7 +98,6 @@
     <orderEntry type="library" exported="" name="jackson-core-2.6.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
-    <orderEntry type="library" exported="" name="1_retrofit-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-databind-2.6.0" level="project" />
   </component>
 </module>

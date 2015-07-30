@@ -21,101 +21,146 @@
 
         <TextView
             android:text="Select the map"
+            android:textSize="20sp"
             android:id="@+id/choose_map_text"
             android:gravity="center"
             android:layout_width="match_parent" android:layout_height="match_parent" />
 
     </LinearLayout>
 
+
+
     <RelativeLayout
         android:id="@+id/buttonslayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textlayout">
+        android:layout_below="@id/textlayout"
+        android:layout_centerHorizontal="true">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/dust2_button"
-            android:background="@drawable/dust2_custom_button"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="62dp"
-            android:layout_marginStart="62dp" />
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/cache_button"
-            android:background="@drawable/cache_custom_button"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="56dp"
-            android:layout_marginEnd="56dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/nuke_button"
-            android:background="@drawable/nuke_custom_button"
-            android:layout_below="@+id/dust2_button"
-            android:layout_alignLeft="@+id/dust2_button"
-            android:layout_alignStart="@+id/dust2_button"
-            android:layout_marginTop="25dp" />
+        <LinearLayout
+            android:id="@+id/row_01"
+            android:orientation="horizontal"
+            android:paddingLeft="25.0dip"
+            android:paddingTop="25.0dip"
+            android:paddingRight="25.0dip"
+            android:paddingBottom="1.0dip"
+            android:showDividers="middle"
+            android:layout_centerHorizontal="true"
+            android:divider="@drawable/empty_tall_divider"
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/mirage_button"
-            android:background="@drawable/mirage_custom_button"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/nuke_button"
-            android:layout_alignLeft="@+id/nuke_button"
-            android:layout_alignStart="@+id/nuke_button" />
+            <Button
+                android:id="@+id/dust2_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/dust2_custom_button"
+                android:layout_weight="1.0" />
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/overpass_button"
-        android:background="@drawable/overpass_custom_button"
-        android:layout_above="@+id/mirage_button"
-        android:layout_alignLeft="@+id/cache_button"
-        android:layout_alignStart="@+id/cache_button" />
+            <Button
+                android:id="@+id/cache_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/cache_custom_button"
+                android:layout_weight="1.0"/>
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/inferno_button"
-        android:background="@drawable/inferno_custom_button"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/overpass_button"
-        android:layout_alignStart="@+id/overpass_button" />
+        </LinearLayout>
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/cobblestone_button"
-        android:background="@drawable/cobblestone_custom_button"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/mirage_button"
-        android:layout_alignLeft="@+id/mirage_button"
-        android:layout_alignStart="@+id/mirage_button" />
+        <LinearLayout
+            android:id="@+id/row_02"
+            android:orientation="horizontal"
+            android:paddingLeft="25.0dip"
+            android:paddingTop="10.0dip"
+            android:paddingRight="25.0dip"
+            android:paddingBottom="1.0dip"
+            android:showDividers="middle"
+            android:layout_centerHorizontal="true"
+            android:divider="@drawable/empty_tall_divider"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_below="@id/row_01">
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/train_button"
-        android:background="@drawable/train_custom_button"
-        android:layout_alignTop="@+id/cobblestone_button"
-        android:layout_alignLeft="@+id/inferno_button"
-        android:layout_alignStart="@+id/inferno_button" />
+            <Button
+                android:id="@+id/mirage_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/mirage_custom_button"
+                android:layout_weight="1.0" />
 
+            <Button
+                android:id="@+id/inferno_buton"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/inferno_custom_button"
+                android:layout_weight="1.0" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row_03"
+            android:orientation="horizontal"
+            android:paddingLeft="25.0dip"
+            android:paddingTop="10.0dip"
+            android:paddingRight="25.0dip"
+            android:paddingBottom="1.0dip"
+            android:showDividers="middle"
+            android:layout_centerHorizontal="true"
+            android:divider="@drawable/empty_tall_divider"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_below="@id/row_02">
+
+            <Button
+                android:id="@+id/nuke_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/nuke_custom_button"
+                android:layout_weight="1.0" />
+
+            <Button
+                android:id="@+id/train_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/train_custom_button"
+                android:layout_weight="1.0"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row_04"
+            android:orientation="horizontal"
+            android:paddingLeft="25.0dip"
+            android:paddingTop="10.0dip"
+            android:paddingRight="25.0dip"
+            android:paddingBottom="25.0dip"
+            android:showDividers="middle"
+            android:layout_centerHorizontal="true"
+            android:divider="@drawable/empty_tall_divider"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_below="@id/row_03">
+
+            <Button
+                android:id="@+id/cobblestone_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/cobblestone_custom_button"
+                android:layout_weight="1.0" />
+
+            <Button
+                android:id="@+id/overpass_button"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:background="@drawable/overpass_custom_button"
+                android:layout_weight="1.0" />
+
+        </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>
