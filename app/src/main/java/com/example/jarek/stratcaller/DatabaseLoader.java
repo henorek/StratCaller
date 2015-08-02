@@ -12,7 +12,7 @@ public class DatabaseLoader extends AsyncTask<String, Void, TacticsEntity[]> {
         @Override
         protected TacticsEntity[] doInBackground(String... urls) {
             RestTemplate restTemplate = new RestTemplate();
-            output = restTemplate.getForObject("http://192.168.0.106:8080/SpringMVCApp/api/tactics", TacticsEntity[].class);
+            output = restTemplate.getForObject("http://192.168.0.106:8080/SpringMVCApp/api/tactics/"+urls[0], TacticsEntity[].class);
             return output;
         }
 

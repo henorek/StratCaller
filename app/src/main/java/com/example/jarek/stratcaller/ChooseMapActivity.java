@@ -5,29 +5,61 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ChooseMapActivity extends Activity {
+
+    private Intent intent;
+    private DatabaseLoader databaseLoaderTask;
+    public TacticsEntity[] actualMapTactics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        super.onCreate(savedInstanceState);
+        databaseLoaderTask = new DatabaseLoader();
+        intent = new Intent(this, ChooseSideActivity.class);
 
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_map);
 
-        /* TODO: Commentary to map settings */
-        Button Dust2_Button = (Button) findViewById(R.id.dust2_button);
+        //Settings of "Select the map" text.
         TextView ChooseMapText = (TextView) findViewById(R.id.choose_map_text);
-        Typeface font = Typeface.createFromAsset(getAssets(), "coolvetica.ttf");
-        ChooseMapText.setTypeface(font);
-        Dust2_Button.setOnClickListener(new View.OnClickListener() {
+        Typeface coolveticaFont = Typeface.createFromAsset(getAssets(), "coolvetica.ttf");
+        ChooseMapText.setTypeface(coolveticaFont);
+
+        //Settings of maps buttons
+        Map<Integer, String> maps = new HashMap<>();
+        maps.put(R.id.dust2_button, "de_dust2");
+        maps.put(R.id.cache_button, "de_cache");
+        maps.put(R.id.mirage_button, "de_mirage");
+        maps.put(R.id.inferno_buton, "de_inferno");
+        maps.put(R.id.nuke_button, "de_nuke");
+        maps.put(R.id.train_button, "de_train");
+        maps.put(R.id.cobblestone_button, "de_cobblestone");
+        maps.put(R.id.overpass_button, "de_overpass");
+
+        for (int resource : maps.keySet()) {
+            prepareButton(resource);
+        }
+
+    }
+    private void prepareButton(final int resource) {
+        Button button = (Button) findViewById(resource);
+        button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ChooseMapActivity.this, ChooseSideActivity.class));
+//              databaseLoaderTask.execute(mapChoice);
+                startActivity(intent);
             }
         });
     }
+//        databaseLoaderTask.delegate=this;
 }
+
+//    @Override
+//    public void processFinish(TacticsEntity[] output) {
+//        actualMapTactics=output;
+//    }

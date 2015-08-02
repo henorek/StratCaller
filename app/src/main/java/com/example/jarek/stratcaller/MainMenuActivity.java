@@ -2,14 +2,13 @@ package com.example.jarek.stratcaller;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.springframework.web.client.RestTemplate;
+import java.util.Random;
 
 public class MainMenuActivity extends Activity implements DatabaseLoaderResponse {
 
@@ -28,7 +27,7 @@ public class MainMenuActivity extends Activity implements DatabaseLoaderResponse
 
         testText = (TextView) findViewById(R.id.textView);
 
-        databaseLoaderTask.execute();
+        databaseLoaderTask.execute("de_dust2");
         databaseLoaderTask.delegate = this;
 
         /* Swapping screen after choosing New Match button */
@@ -58,6 +57,8 @@ public class MainMenuActivity extends Activity implements DatabaseLoaderResponse
 
     @Override
     public void processFinish(TacticsEntity[] output) {
-        testText.setText(output[0].getCategory());
+        Random random = new Random();
+        int n = random.nextInt(output.length);
+        testText.setText(output[n].getCategory());
     }
 }
