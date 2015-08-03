@@ -19,7 +19,7 @@
         android:gravity="top"
         >
 
-        <TextView
+        <com.example.jarek.stratcaller.TextViewPlus
             android:text="Select the map"
             android:textSize="21sp"
             android:id="@+id/choose_map_text"

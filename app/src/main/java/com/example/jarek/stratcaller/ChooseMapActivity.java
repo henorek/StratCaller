@@ -2,11 +2,9 @@ package com.example.jarek.stratcaller;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,11 +23,6 @@ public class ChooseMapActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_map);
-
-        //Settings of "Select the map" text.
-        TextView ChooseMapText = (TextView) findViewById(R.id.choose_map_text);
-        Typeface coolveticaFont = Typeface.createFromAsset(getAssets(), "coolvetica.ttf");
-        ChooseMapText.setTypeface(coolveticaFont);
 
         //Settings of maps buttons
         Map<Integer, String> maps = new HashMap<>();
