@@ -24,7 +24,7 @@ public class ChooseMapActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_map);
 
-        //Settings of maps buttons
+        //Settings of map buttons
         Map<Integer, String> maps = new HashMap<>();
         maps.put(R.id.dust2_button, "de_dust2");
         maps.put(R.id.cache_button, "de_cache");

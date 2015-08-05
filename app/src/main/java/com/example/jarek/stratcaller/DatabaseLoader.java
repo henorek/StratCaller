@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 public class DatabaseLoader extends AsyncTask<String, Void, TacticsEntity[]> {
     public DatabaseLoaderResponse delegate=null;
 
-        TacticsEntity[] output;
+        private TacticsEntity[] output;
 
         @Override
         protected TacticsEntity[] doInBackground(String... urls) {
