@@ -108,7 +108,8 @@
             android:id="@+id/start_button"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:clickable="false"/>
 
     </RelativeLayout>
 

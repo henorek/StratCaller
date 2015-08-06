@@ -35,6 +35,7 @@ public class MainMenuActivity extends Activity {
 
         /* Swapping screen after choosing Previous Match button */
         Button PrevMatchButton = (Button) findViewById(R.id.prev_match_button);
+        PrevMatchButton.setEnabled(false);
         PrevMatchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainMenuActivity.this, PrevMatchesActivity.class));
@@ -43,6 +44,7 @@ public class MainMenuActivity extends Activity {
 
         /* Swapping screen after choosing Training button */
         Button TrainingButton = (Button) findViewById(R.id.training_button);
+        TrainingButton.setEnabled(false);
         TrainingButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainMenuActivity.this, SettingsActivity.class));
@@ -51,6 +53,7 @@ public class MainMenuActivity extends Activity {
 
         /* Swapping screen after choosing Settings button */
         Button SettingsButton = (Button) findViewById(R.id.settings_button);
+        SettingsButton.setEnabled(false);
         SettingsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainMenuActivity.this, SettingsActivity.class));

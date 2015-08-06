@@ -50,6 +50,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:layout_marginBottom="10dp"
+            android:clickable="false"
             />
 
         <com.example.jarek.stratcaller.ButtonPlus
@@ -78,7 +79,8 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:layout_marginBottom="10dp"
-            android:layout_below="@id/prev_match_button"/>
+            android:layout_below="@id/prev_match_button"
+            android:clickable="false"/>
 
         <com.example.jarek.stratcaller.ButtonPlus
             android:textAllCaps="false"
@@ -92,19 +94,12 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:layout_marginBottom="10dp"
-            android:layout_below="@id/training_button"/>
+            android:layout_below="@id/training_button"
+            android:clickable="false"/>
 
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView"
-        android:layout_below="@+id/main_menu_buttons_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp" />
+
 
 </RelativeLayout>
 
