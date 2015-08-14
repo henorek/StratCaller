@@ -16,4 +16,15 @@
     <string name="title_activity_warumup">WarumupActivity</string>
 
     <string name="title_activity_round">RoundActivity</string>
+    <string name="SelectSideText">Select side</string>
+    <string name="WarmupText">Warmup</string>
+    <string name="SelectMapText">Select map</string>
+    <string name="logo">logo</string>
+    <string name="WarumupDescription">Prepare for match and press Start button\nwhen in-game countdown timer runs out.</string>
+    <string name="NewMatchButtonText">New match</string>
+    <string name="PreviousMatchesButtonText">Previous matches</string>
+    <string name="CurrentMapText">Current map</string>
+    <string name="TrainingButtonText">Training</string>
+    <string name="SettingsButtonText">Settings</string>
+    <string name="StartButtonText">Start</string>
 </resources>

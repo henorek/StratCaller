@@ -25,6 +25,9 @@ public class MainMenuActivity extends Activity {
 //        databaseLoaderTask.execute("de_dust2");
 //        databaseLoaderTask.delegate = this;
 
+        LocalTacticsEntity db = new LocalTacticsEntity(this);
+        db.getAllData();
+
         /* Swapping screen after choosing New Match button */
         Button NewMatchButton = (Button) findViewById(R.id.new_match_button);
         NewMatchButton.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,6 @@ public class MainMenuActivity extends Activity {
 //    public void processFinish(TacticsEntity[] output) {
 //        Random random = new Random();
 //        int n = random.nextInt(output.length);
-//        testText.setText(output[n].getCategory());
+//        testText.setText(output[n].getName());
 //    }
 }

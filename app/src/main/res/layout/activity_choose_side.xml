@@ -19,7 +19,7 @@
         android:gravity="top">
 
         <com.example.jarek.stratcaller.TextViewPlus
-            android:text="Select side"
+            android:text="@string/SelectSideText"
             android:textSize="23sp"
             android:id="@+id/choose_side_text"
             android:gravity="center"
@@ -83,7 +83,7 @@
         android:layout_below="@id/buttons2layout">
 
         <com.example.jarek.stratcaller.TextViewPlus
-            android:text="Current map"
+            android:text="@string/CurrentMapText"
             android:textSize="23sp"
             android:id="@+id/tips_text"
             android:gravity="center"

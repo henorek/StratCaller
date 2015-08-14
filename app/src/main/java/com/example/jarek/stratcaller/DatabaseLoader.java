@@ -4,20 +4,25 @@ import android.os.AsyncTask;
 
 import org.springframework.web.client.RestTemplate;
 
-public class DatabaseLoader extends AsyncTask<String, Void, TacticsEntity[]> {
-    public DatabaseLoaderResponse delegate=null;
+class DatabaseLoader extends AsyncTask<LocalTacticsEntity, Void, TacticsEntity[]> {
 
-        private TacticsEntity[] output;
+    private final DatabaseLoaderResponse delegate=null;
 
-        @Override
-        protected TacticsEntity[] doInBackground(String... urls) {
-            RestTemplate restTemplate = new RestTemplate();
-            output = restTemplate.getForObject("http://192.168.0.106:8080/SpringMVCApp/api/tactics/"+urls[0], TacticsEntity[].class);
-            return output;
+    LocalTacticsEntity db;
+    private TacticsEntity[] output;
+
+    @Override
+    protected TacticsEntity[] doInBackground(LocalTacticsEntity... urls) {
+        RestTemplate restTemplate = new RestTemplate();
+        output = restTemplate.getForObject("http://192.168.0.106:8080/SpringMVCApp/api/tactics/"+urls[0], TacticsEntity[].class);
+        for (TacticsEntity data : output) {
+            db.insertData(data.getName(), data.getDescription(), data.getCategory(), data.getMinimap(), data.getLevel(), data.getSide(), data.getDifficulty(), data.getAuthor());
         }
-
-        @Override
-        protected void onPostExecute(TacticsEntity[] output) {
-            delegate.processFinish(output);
-        }
+        return output;
     }
+
+    @Override
+    protected void onPostExecute(TacticsEntity[] output) {
+        delegate.processFinish(output);
+    }
+}

@@ -12,8 +12,11 @@ import java.util.Map;
 public class ChooseMapActivity extends Activity {
 
     private Intent intent;
+    private Intent map;
     private DatabaseLoader databaseLoaderTask;
     public TacticsEntity[] actualMapTactics;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +39,15 @@ public class ChooseMapActivity extends Activity {
         maps.put(R.id.overpass_button, "de_overpass");
 
         for (int resource : maps.keySet()) {
-            prepareButton(resource);
+            prepareButton(resource, maps.get(resource));
         }
 
     }
-    private void prepareButton(final int resource) {
+    private void prepareButton(final int resource, final String mapChoice) {
         Button button = (Button) findViewById(resource);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                intent.putExtra("current map from ChooseMapActivity", mapChoice.toString());
 //              databaseLoaderTask.execute(mapChoice);
                 startActivity(intent);
             }
