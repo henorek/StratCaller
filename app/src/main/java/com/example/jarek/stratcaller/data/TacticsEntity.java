@@ -1,4 +1,4 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.data;
 
 import java.io.Serializable;
 

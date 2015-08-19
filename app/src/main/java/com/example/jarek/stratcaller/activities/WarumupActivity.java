@@ -1,15 +1,19 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.example.jarek.stratcaller.data.DatabaseUpdater;
+import com.example.jarek.stratcaller.R;
+import com.example.jarek.stratcaller.data.TacticsDAO;
+import com.example.jarek.stratcaller.data.TacticsEntity;
+import com.example.jarek.stratcaller.widgets.ZoomableImageView;
 
 import java.util.List;
 
@@ -71,7 +75,7 @@ public class WarumupActivity extends Activity {
         TacticsEntity test = sidestrat.get(0);
         Log.e("It's alive!", test.getName());
 
-        ZoomableImageView  mini_map = (ZoomableImageView) findViewById(R.id.minimap);
+        ZoomableImageView mini_map = (ZoomableImageView) findViewById(R.id.minimap);
         mini_map.setImageBitmap(bitmap);
 
         Button startButton = (Button) findViewById(R.id.start_buton);

@@ -1,7 +1,9 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.jarek.stratcaller.R;
 
 public class SettingsActivity extends Activity {
 

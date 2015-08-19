@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="wrap_content" android:background="#6c6976"
-    tools:context="com.example.jarek.stratcaller.WarumupActivity"
+    tools:context="com.example.jarek.stratcaller.activities.WarumupActivity"
     android:paddingBottom="25.0dip">
 
 
@@ -18,7 +18,7 @@
         android:gravity="top"
         >
 
-        <com.example.jarek.stratcaller.TextViewPlus
+        <com.example.jarek.stratcaller.widgets.TextViewPlus
             android:text="@string/WarmupText"
             android:textSize="23sp"
             android:id="@+id/warmup_text"
@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true"
         >
 
-        <com.example.jarek.stratcaller.TextViewPlus
+        <com.example.jarek.stratcaller.widgets.TextViewPlus
             android:id="@+id/info_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         android:gravity="top"
         android:layout_below="@id/info_text_layout">
 
-        <com.example.jarek.stratcaller.TextViewPlus
+        <com.example.jarek.stratcaller.widgets.TextViewPlus
             android:text="@string/CurrentMapText"
             android:textSize="23sp"
             android:id="@+id/current_map_text"
@@ -83,7 +83,7 @@
         android:paddingBottom="25.0dip"
         >
 
-        <com.example.jarek.stratcaller.ZoomableImageView
+        <com.example.jarek.stratcaller.widgets.ZoomableImageView
             android:id="@+id/minimap"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
@@ -110,7 +110,7 @@
         android:paddingRight="25.0dip"
         android:gravity="bottom">
 
-        <com.example.jarek.stratcaller.ButtonPlus
+        <com.example.jarek.stratcaller.widgets.ButtonPlus
             android:id="@+id/start_buton"
             android:textSize="25sp"
             android:textColor="#FFFFFF"

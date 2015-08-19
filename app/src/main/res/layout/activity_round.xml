@@ -17,7 +17,7 @@
         android:gravity="top"
         >
 
-        <com.example.jarek.stratcaller.TextViewPlus
+        <com.example.jarek.stratcaller.widgets.TextViewPlus
             android:text="#1 Round"
             android:textSize="23sp"
             android:id="@+id/round_text"
@@ -57,7 +57,7 @@
         android:gravity="top"
         android:layout_below="@id/score_layout">
 
-        <com.example.jarek.stratcaller.TextViewPlus
+        <com.example.jarek.stratcaller.widgets.TextViewPlus
             android:text="Strategy"
             android:textSize="23sp"
             android:id="@+id/current_map_text"
@@ -124,7 +124,7 @@
             android:divider="@drawable/empty_tall_divider"
             android:layout_width="fill_parent" android:layout_height="wrap_content">
 
-            <com.example.jarek.stratcaller.ButtonPlus
+            <com.example.jarek.stratcaller.widgets.ButtonPlus
                 android:id="@+id/ct"
                 android:background="@drawable/green_button"
                 android:layout_width="0.0dip" android:layout_height="50.0dip"
@@ -133,7 +133,7 @@
                 android:text="CT"
                 android:layout_weight="1.0" />
 
-            <com.example.jarek.stratcaller.ButtonPlus
+            <com.example.jarek.stratcaller.widgets.ButtonPlus
                 android:id="@+id/tt"
                 android:background="@drawable/green_button"
                 android:layout_width="0.0dip" android:layout_height="50.0dip"

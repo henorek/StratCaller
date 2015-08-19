@@ -1,4 +1,4 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.widgets;
 
 import android.content.Context;
 import android.graphics.Typeface;

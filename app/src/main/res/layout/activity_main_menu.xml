@@ -38,7 +38,7 @@
         android:paddingLeft="25.0dip"
         android:paddingRight="25.0dip">
 
-        <com.example.jarek.stratcaller.ButtonPlus
+        <com.example.jarek.stratcaller.widgets.ButtonPlus
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -53,7 +53,7 @@
             android:clickable="false"
             />
 
-        <com.example.jarek.stratcaller.ButtonPlus
+        <com.example.jarek.stratcaller.widgets.ButtonPlus
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -67,7 +67,7 @@
             android:layout_marginBottom="10dp"
             android:layout_below="@id/new_match_button"/>
 
-        <com.example.jarek.stratcaller.ButtonPlus
+        <com.example.jarek.stratcaller.widgets.ButtonPlus
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -82,7 +82,7 @@
             android:layout_below="@id/prev_match_button"
             android:clickable="false"/>
 
-        <com.example.jarek.stratcaller.ButtonPlus
+        <com.example.jarek.stratcaller.widgets.ButtonPlus
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="50dp"

@@ -1,14 +1,12 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.data;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.springframework.web.client.RestTemplate;
 
-class DatabaseUpdater extends AsyncTask<Void, Void, TacticsEntity[]> {
+public class DatabaseUpdater extends AsyncTask<Void, Void, TacticsEntity[]> {
 
     private Context mContext;
 

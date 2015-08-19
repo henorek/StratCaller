@@ -1,4 +1,4 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.data;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

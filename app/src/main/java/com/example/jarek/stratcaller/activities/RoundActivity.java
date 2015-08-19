@@ -1,4 +1,4 @@
-package com.example.jarek.stratcaller;
+package com.example.jarek.stratcaller.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.jarek.stratcaller.R;
+import com.example.jarek.stratcaller.widgets.TextViewPlus;
 
 public class RoundActivity extends Activity {
 
