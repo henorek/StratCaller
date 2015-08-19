@@ -7,71 +7,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainMenuActivity extends Activity {
+import java.util.HashMap;
+import java.util.Map;
 
-    TextView testText;
-    DatabaseLoader databaseLoaderTask;
+public class MainMenuActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-//        databaseLoaderTask = new DatabaseLoader();
-//        testText = (TextView) findViewById(R.id.textView);
-//
-//        databaseLoaderTask.execute("de_dust2");
-//        databaseLoaderTask.delegate = this;
+        Map<Integer, Intent> menu = new HashMap<>();
+        menu.put(R.id.new_match_button, new Intent(this, ChooseMapActivity.class));
+        menu.put(R.id.prev_match_button, new Intent(this, PrevMatchesActivity.class));
+        menu.put(R.id.training_button, new Intent(this, SettingsActivity.class));
+        menu.put(R.id.settings_button, new Intent(this, SettingsActivity.class));
 
-        LocalTacticsEntity db = new LocalTacticsEntity(this);
-        db.getAllData();
-
-        /* Swapping screen after choosing New Match button */
-        Button NewMatchButton = (Button) findViewById(R.id.new_match_button);
-        NewMatchButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, ChooseMapActivity.class));
-            }
-        });
-
-        /* Swapping screen after choosing Previous Match button */
-        Button PrevMatchButton = (Button) findViewById(R.id.prev_match_button);
-        PrevMatchButton.setEnabled(false);
-        PrevMatchButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, PrevMatchesActivity.class));
-            }
-        });
-
-        /* Swapping screen after choosing Training button */
-        Button TrainingButton = (Button) findViewById(R.id.training_button);
-        TrainingButton.setEnabled(false);
-        TrainingButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, SettingsActivity.class));
-            }
-        });
-
-        /* Swapping screen after choosing Settings button */
-        Button SettingsButton = (Button) findViewById(R.id.settings_button);
-        SettingsButton.setEnabled(false);
-        SettingsButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, SettingsActivity.class));
-            }
-        });
-
-
+        for (int resource : menu.keySet()) {
+            prepareButton(resource, menu.get(resource));
+        }
     }
 
-
-
-//    @Override
-//    public void processFinish(TacticsEntity[] output) {
-//        Random random = new Random();
-//        int n = random.nextInt(output.length);
-//        testText.setText(output[n].getName());
-//    }
+    //Create button
+    private void prepareButton(final int resource, final Intent location) {
+        Button button = (Button) findViewById(resource);
+        button.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(location);
+        }
+    });
+    }
 }

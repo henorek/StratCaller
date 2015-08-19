@@ -3,6 +3,7 @@ package com.example.jarek.stratcaller;
 import java.io.Serializable;
 
 public class TacticsEntity implements Serializable{
+
     private int id;
     private String name;
     private String description;

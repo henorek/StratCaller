@@ -12,22 +12,16 @@ import java.util.Map;
 public class ChooseMapActivity extends Activity {
 
     private Intent intent;
-    private Intent map;
-    private DatabaseLoader databaseLoaderTask;
-    public TacticsEntity[] actualMapTactics;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        databaseLoaderTask = new DatabaseLoader();
         intent = new Intent(this, ChooseSideActivity.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_map);
 
-        //Settings of map buttons
+        //Set of parameters for prepareButton method -> map buttons
         Map<Integer, String> maps = new HashMap<>();
         maps.put(R.id.dust2_button, "de_dust2");
         maps.put(R.id.cache_button, "de_cache");
@@ -43,20 +37,17 @@ public class ChooseMapActivity extends Activity {
         }
 
     }
+
+    //Create button
     private void prepareButton(final int resource, final String mapChoice) {
         Button button = (Button) findViewById(resource);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intent.putExtra("current map from ChooseMapActivity", mapChoice.toString());
-//              databaseLoaderTask.execute(mapChoice);
+                //Add chosen map to intent to send it for future use
+                intent.putExtra("current map from ChooseMapActivity", mapChoice);
                 startActivity(intent);
             }
         });
     }
-//        databaseLoaderTask.delegate=this;
 }
 
-//    @Override
-//    public void processFinish(TacticsEntity[] output) {
-//        actualMapTactics=output;
-//    }

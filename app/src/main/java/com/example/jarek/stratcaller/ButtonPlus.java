@@ -22,8 +22,7 @@ public class ButtonPlus extends Button {
     }
 
     private void init() {
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "coolvetica.ttf");
+        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "coolvetica.ttf");
         setTypeface(tf);
     }
 }
