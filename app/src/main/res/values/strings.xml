@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">StratCaller</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="logotype">logo</string>
-
-    <string name="title_activity_start">StartActivity</string>
-
     <string name="title_activity_prev_matches">PrevMatchesActivity</string>
 
     <string name="title_activity_settings">SettingsActivity</string>
@@ -27,4 +21,11 @@
     <string name="TrainingButtonText">Training</string>
     <string name="SettingsButtonText">Settings</string>
     <string name="StartButtonText">Start</string>
+    <string name="starterRound">#1 Round</string>
+    <string name="starterScore">0 – 0</string>
+    <string name="strategy">Strategy</string>
+    <string name="stratTitle">SampleTitle</string>
+    <string name="stratDescription">SampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\n</string>
+    <string name="ctButtonScore">CT</string>
+    <string name="ttButtonScore">TT</string>
 </resources>

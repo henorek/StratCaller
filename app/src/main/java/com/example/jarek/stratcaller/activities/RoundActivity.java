@@ -1,27 +1,24 @@
 package com.example.jarek.stratcaller.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jarek.stratcaller.R;
+import com.example.jarek.stratcaller.logic.CounterLogic;
 import com.example.jarek.stratcaller.widgets.TextViewPlus;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RoundActivity extends Activity {
 
-    int counterL = 0;
-    int counterR = 0;
-    int roundNumber = 1;
-
-    TextView score;
-    TextViewPlus roundCount;
-
-    Button ctButton;
-    Button ttButton;
+    private TextView score;
+    private TextViewPlus roundCount;
+    private CounterLogic ctCounter;
+    private CounterLogic ttCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,48 +28,36 @@ public class RoundActivity extends Activity {
 
         roundCount = (TextViewPlus) findViewById(R.id.round_text);
         score = (TextView) findViewById(R.id.score_text);
-        ctButton = (Button) findViewById(R.id.ct);
-        ttButton = (Button) findViewById(R.id.tt);
 
-        ctButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (counterL < 16) {
-                    counterL++;
-                    roundNumber++;
-                    score.setText(counterL + " - " + counterR);
-                } else if (counterL == 16) {
-                    Toast.makeText(RoundActivity.this, "Counter Terrorist Win!", Toast.LENGTH_LONG).show();
-                    ctButton.setEnabled(false);
-                    ttButton.setEnabled(false);
-                }
+        Map<Integer, CounterLogic> points = new HashMap<>();
+        points.put(R.id.ct, new CounterLogic());
+        points.put(R.id.tt, new CounterLogic());
 
-                roundCount.setText("#" + roundNumber + " Round");
-            }
-        });
-
-        ttButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (counterR < 16) {
-                    counterR++;
-                    roundNumber++;
-                    score.setText(counterL + " - " + counterR);
-                } else if (counterR == 16) {
-                    Toast.makeText(RoundActivity.this, "Terrorist Win!", Toast.LENGTH_LONG).show();
-                    ctButton.setEnabled(false);
-                    ttButton.setEnabled(false);
-                }
-
-                roundCount.setText("#" + roundNumber + " Round");
-            }
-        });
-
-
+        for (int resource : points.keySet()) {
+            prepareButton(resource, points.get(resource));
+        }
     }
 
-    public void showMessage(String message){
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setMessage(message);
+    //Create button
+    private void prepareButton(final int resource, final CounterLogic sideCounter) {
+        final Button button = (Button) findViewById(resource);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                switch (resource) {
+                    case R.id.ct:
+                        ctCounter = sideCounter;
+                        if (!ctCounter.checkForWin()) { ctCounter.increment(); }
+                        else { button.setEnabled(false); }
+                        break;
+
+                    case R.id.tt:
+                        ttCounter = sideCounter;
+                        if (!ttCounter.checkForWin()) { ttCounter.increment(); }
+                        else { button.setEnabled(false); }
+                        break;
+                    }
+                score.setText(ctCounter + " - " + ttCounter);
+            }
+        });
     }
 }

@@ -18,7 +18,7 @@
         >
 
         <com.example.jarek.stratcaller.widgets.TextViewPlus
-            android:text="#1 Round"
+            android:text="@string/starterRound"
             android:textSize="23sp"
             android:id="@+id/round_text"
             android:gravity="center"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="0 - 0"
+            android:text="@string/starterScore"
             android:paddingTop="15.0dip"
             android:paddingBottom="15.0dip"/>
     </RelativeLayout>
@@ -58,11 +58,10 @@
         android:layout_below="@id/score_layout">
 
         <com.example.jarek.stratcaller.widgets.TextViewPlus
-            android:text="Strategy"
+            android:text="@string/strategy"
             android:textSize="23sp"
             android:id="@+id/current_map_text"
             android:gravity="center"
-            android:layout_below="@id/warmup_text_layout"
             android:layout_width="match_parent" android:layout_height="match_parent"/>
 
 
@@ -84,7 +83,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="22sp"
-            android:text="SampleTitle"
+            android:text="@string/stratTitle"
             android:paddingTop="15.0dip"
             android:paddingBottom="15.0dip"/>
 
@@ -99,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="16sp"
-                android:text="SampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\n"
+                android:text="@string/stratDescription"
                 android:paddingBottom="15.0dip"
                 />
 
@@ -130,7 +129,7 @@
                 android:layout_width="0.0dip" android:layout_height="50.0dip"
                 android:textSize="25sp"
                 android:textColor="#FFFFFF"
-                android:text="CT"
+                android:text="@string/ctButtonScore"
                 android:layout_weight="1.0" />
 
             <com.example.jarek.stratcaller.widgets.ButtonPlus
@@ -139,7 +138,7 @@
                 android:layout_width="0.0dip" android:layout_height="50.0dip"
                 android:textSize="25sp"
                 android:textColor="#FFFFFF"
-                android:text="TT"
+                android:text="@string/ttButtonScore"
                 android:layout_weight="1.0" />
 
         </LinearLayout>

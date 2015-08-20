@@ -20,12 +20,10 @@ import java.util.List;
 public class WarumupActivity extends Activity {
 
     private Bitmap bitmap;
-    private DatabaseUpdater databaseUpdaterTask;
     private Intent intent;
-    private TacticsDAO tacticsDAO;
-    Bundle bundle;
-    String mapChoice;
-    String sideChoice;
+    private Bundle bundle;
+    private String mapChoice;
+    private String sideChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +31,10 @@ public class WarumupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warumup);
 
-        databaseUpdaterTask = new DatabaseUpdater(this);
+        DatabaseUpdater databaseUpdaterTask = new DatabaseUpdater(this);
         databaseUpdaterTask.execute();
 
-        tacticsDAO = new TacticsDAO(this);
+        TacticsDAO tacticsDAO = new TacticsDAO(this);
 
         intent = new Intent(this, RoundActivity.class);
 

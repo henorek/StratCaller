@@ -8,21 +8,18 @@ import org.springframework.web.client.RestTemplate;
 
 public class DatabaseUpdater extends AsyncTask<Void, Void, TacticsEntity[]> {
 
-    private Context mContext;
-
+    private final Context mContext;
     public DatabaseUpdater(Context context) {
         mContext = context;
     }
 
-    private TacticsDAO tacticsDAO;
     private TacticsEntity[] output;
-    private RestTemplate restTemplate;
+    private TacticsDAO tacticsDAO;
 
     @Override
     protected TacticsEntity[] doInBackground(Void... urls) {
-        restTemplate = new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
         tacticsDAO = new TacticsDAO(mContext);
-
         output = restTemplate.getForObject("http://192.168.0.100:8080/SpringMVCApp/api/tactics/de_dust2", TacticsEntity[].class);
         return output;
     }

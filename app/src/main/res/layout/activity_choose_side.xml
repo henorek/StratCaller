@@ -47,7 +47,6 @@
                     android:paddingRight="25.0dip"
                     android:paddingBottom="25.0dip"
                     android:showDividers="middle"
-                    android:layout_centerHorizontal="true"
                     android:divider="@drawable/empty_tall_divider"
                     android:layout_width="wrap_content" android:layout_height="wrap_content">
 

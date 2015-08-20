@@ -63,7 +63,6 @@
             android:textSize="23sp"
             android:id="@+id/current_map_text"
             android:gravity="center"
-            android:layout_below="@id/warmup_text_layout"
             android:layout_width="match_parent" android:layout_height="match_parent"/>
 
 
@@ -88,15 +87,6 @@
             android:layout_width="wrap_content"
             android:layout_height="300dp"
             />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textView2"
-            android:layout_below="@+id/minimap"
-            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 

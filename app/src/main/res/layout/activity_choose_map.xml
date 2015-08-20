@@ -56,7 +56,6 @@
             android:paddingRight="25.0dip"
             android:paddingBottom="1.0dip"
             android:showDividers="middle"
-            android:layout_centerHorizontal="true"
             android:divider="@drawable/empty_tall_divider"
             android:layout_width="wrap_content" android:layout_height="wrap_content">
 
@@ -82,10 +81,8 @@
             android:paddingRight="25.0dip"
             android:paddingBottom="1.0dip"
             android:showDividers="middle"
-            android:layout_centerHorizontal="true"
             android:divider="@drawable/empty_tall_divider"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/row_01">
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
 
             <Button style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/mirage_button"
@@ -109,10 +106,8 @@
             android:paddingRight="25.0dip"
             android:paddingBottom="1.0dip"
             android:showDividers="middle"
-            android:layout_centerHorizontal="true"
             android:divider="@drawable/empty_tall_divider"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/row_02">
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
 
             <Button style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/nuke_button"
@@ -136,10 +131,8 @@
             android:paddingRight="25.0dip"
             android:paddingBottom="25.0dip"
             android:showDividers="middle"
-            android:layout_centerHorizontal="true"
             android:divider="@drawable/empty_tall_divider"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/row_03">
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
 
             <Button style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/cobblestone_button"

@@ -14,8 +14,6 @@ import java.util.Map;
 public class ChooseSideActivity extends Activity {
 
     private Intent intent;
-    private Bundle bundle;
-    private String currentMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +21,8 @@ public class ChooseSideActivity extends Activity {
         intent = new Intent(this, WarumupActivity.class);
 
         //Get intent from previous activity (chosen map) and send it further
-        bundle = getIntent().getExtras();
-        currentMap = bundle.getString("current map from ChooseMapActivity");
+        Bundle bundle = getIntent().getExtras();
+        String currentMap = bundle.getString("current map from ChooseMapActivity");
         intent.putExtra("current map from ChooseMapActivity", currentMap);
 
         super.onCreate(savedInstanceState);

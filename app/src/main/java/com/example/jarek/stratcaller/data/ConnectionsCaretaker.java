@@ -7,11 +7,10 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ConnectionsCaretaker {
+class ConnectionsCaretaker {
 
     //Check if application is able to update local database
     public boolean isUpdatePossible(Context context){
@@ -19,14 +18,14 @@ public class ConnectionsCaretaker {
     }
 
     //Check if internet connection is available
-    public boolean isNetworkConnected(Context context) {
+    private boolean isNetworkConnected(Context context) {
         final ConnectivityManager conMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         final NetworkInfo activeNetwork = conMgr.getActiveNetworkInfo();
         return activeNetwork != null && activeNetwork.getState() == NetworkInfo.State.CONNECTED;
     }
 
     //Check if application is able to reach server
-    public boolean isServerReachable(Context context) {
+    private boolean isServerReachable(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnected()) {

@@ -2,7 +2,6 @@ package com.example.jarek.stratcaller.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Window;
 
 import com.example.jarek.stratcaller.R;
 

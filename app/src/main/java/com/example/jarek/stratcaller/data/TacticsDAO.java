@@ -12,23 +12,23 @@ import java.util.List;
 
 public class TacticsDAO extends SQLiteOpenHelper {
 
-    public final static String DB_NAME="tactics.db";                            //Database name
-    public final static String TAC_TABLE="Tactics";                             //Table name
+    private final static String DB_NAME="tactics.db";                            //Database name
+    private final static String TAC_TABLE="Tactics";                             //Table name
 
     public TacticsDAO(Context context) {
         super(context, DB_NAME, null, 1);
     }
 
     //Tactics table columns
-    public final static String TAC_ID = "id";                                   //Record ID
-    public final static String TAC_NAME = "name";                               //Tactic name
-    public final static String TAC_DESCRIPTION = "description";                 //Tactic description
-    public final static String TAC_CATEGORY = "category";                       //Tactic category
-    public final static String TAC_MINIMAP = "minimap";                         //Tactic minimap
-    public final static String TAC_LEVEL = "level";                             //Map in game
-    public final static String TAC_SIDE = "side";                               //Side in game
-    public final static String TAC_DIFFICULTY = "difficulty";                   //Difficulty (1-5)
-    public final static String TAC_AUTHOR = "author";                           //Author of tactic
+    private final static String TAC_ID = "id";                                   //Record ID
+    private final static String TAC_NAME = "name";                               //Tactic name
+    private final static String TAC_DESCRIPTION = "description";                 //Tactic description
+    private final static String TAC_CATEGORY = "category";                       //Tactic category
+    private final static String TAC_MINIMAP = "minimap";                         //Tactic minimap
+    private final static String TAC_LEVEL = "level";                             //Map in game
+    private final static String TAC_SIDE = "side";                               //Side in game
+    private final static String TAC_DIFFICULTY = "difficulty";                   //Difficulty (1-5)
+    private final static String TAC_AUTHOR = "author";                           //Author of tactic
 
     private static final String[] COLUMNS = {TAC_ID,TAC_NAME,TAC_DESCRIPTION,TAC_CATEGORY,TAC_MINIMAP,TAC_LEVEL,TAC_SIDE,TAC_DIFFICULTY,TAC_AUTHOR};
 

@@ -96,12 +96,12 @@ public class TacticsEntity implements Serializable{
         if (difficulty != that.difficulty) return false;
         if (id != that.id) return false;
         if (author != null ? !author.equals(that.author) : that.author != null) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (category != null ? !category.equals(that.category) : that.category != null)
+            return false;
+        if (description != null ? !description.equals(that.description) : that.description != null)
+            return false;
         if (level != null ? !level.equals(that.level) : that.level != null) return false;
-        if (minimap != null ? !minimap.equals(that.minimap) : that.minimap != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return !(side != null ? !side.equals(that.side) : that.side != null);
+        return !(minimap != null ? !minimap.equals(that.minimap) : that.minimap != null) && !(name != null ? !name.equals(that.name) : that.name != null) && !(side != null ? !side.equals(that.side) : that.side != null);
 
     }
 

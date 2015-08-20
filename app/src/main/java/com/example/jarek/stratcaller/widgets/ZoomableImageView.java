@@ -39,13 +39,11 @@ public class ZoomableImageView extends ImageView
     private float bmHeight;
 
     private final ScaleGestureDetector mScaleDetector;
-    private final Context context;
 
     public ZoomableImageView(Context context, AttributeSet attr)
     {
         super(context, attr);
         super.setClickable(true);
-        this.context = context;
         mScaleDetector = new ScaleGestureDetector(context, new ScaleListener());
         matrix.setTranslate(1f, 1f);
         m = new float[9];
@@ -114,7 +112,7 @@ public class ZoomableImageView extends ImageView
                                 else if (x + deltaX < -right)
                                     deltaX = -(x + right);
                             }
-                            //if the image doesnt fit in the width or height
+                            //if the image doesn't fit in the width or height
                             //limit both up and down and left and right
                             else
                             {
