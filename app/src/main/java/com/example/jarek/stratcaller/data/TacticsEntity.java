@@ -5,13 +5,19 @@ import java.io.Serializable;
 public class TacticsEntity implements Serializable{
 
     private int id;
-    private String name;
+    private String icon;
+    private String NAME;
     private String description;
     private String category;
     private String minimap;
     private String level;
     private String side;
     private int difficulty;
+    private int granades;
+    private int flashes;
+    private int smokes;
+    private int molotovs;
+    private int decoys;
     private String author;
 
     public int getId() {
@@ -22,12 +28,20 @@ public class TacticsEntity implements Serializable{
         this.id = id;
     }
 
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     public String getName() {
-        return name;
+        return NAME;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.NAME = name;
     }
 
     public String getDescription() {
@@ -78,6 +92,46 @@ public class TacticsEntity implements Serializable{
         this.difficulty = difficulty;
     }
 
+    public int getGranades() {
+        return granades;
+    }
+
+    public void setGranades(int granades) {
+        this.granades = granades;
+    }
+
+    public int getFlashes() {
+        return flashes;
+    }
+
+    public void setFlashes(int flashes) {
+        this.flashes = flashes;
+    }
+
+    public int getSmokes() {
+        return smokes;
+    }
+
+    public void setSmokes(int smokes) {
+        this.smokes = smokes;
+    }
+
+    public int getMolotovs() {
+        return molotovs;
+    }
+
+    public void setMolotovs(int molotovs) {
+        this.molotovs = molotovs;
+    }
+
+    public int getDecoys() {
+        return decoys;
+    }
+
+    public void setDecoys(int decoys) {
+        this.decoys = decoys;
+    }
+
     public String getAuthor() {
         return author;
     }
@@ -93,28 +147,42 @@ public class TacticsEntity implements Serializable{
 
         TacticsEntity that = (TacticsEntity) o;
 
+        if (granades != that.granades) return false;
+        if (flashes != that.flashes) return false;
+        if (smokes != that.smokes) return false;
+        if (molotovs != that.molotovs) return false;
+        if (decoys != that.decoys) return false;
         if (difficulty != that.difficulty) return false;
         if (id != that.id) return false;
         if (author != null ? !author.equals(that.author) : that.author != null) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null)
-            return false;
-        if (description != null ? !description.equals(that.description) : that.description != null)
-            return false;
+        if (category != null ? !category.equals(that.category) : that.category != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (level != null ? !level.equals(that.level) : that.level != null) return false;
-        return !(minimap != null ? !minimap.equals(that.minimap) : that.minimap != null) && !(name != null ? !name.equals(that.name) : that.name != null) && !(side != null ? !side.equals(that.side) : that.side != null);
+        if (minimap != null ? !minimap.equals(that.minimap) : that.minimap != null) return false;
+        if (icon != null ? !icon.equals(that.icon) : that.icon != null) return false;
+        if (NAME != null ? !NAME.equals(that.NAME) : that.NAME != null) return false;
+        if (side != null ? !side.equals(that.side) : that.side != null) return false;
+
+        return true;
 
     }
 
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (NAME != null ? NAME.hashCode() : 0);
+        result = 31 * result + (icon != null ? icon.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (minimap != null ? minimap.hashCode() : 0);
         result = 31 * result + (level != null ? level.hashCode() : 0);
         result = 31 * result + (side != null ? side.hashCode() : 0);
         result = 31 * result + difficulty;
+        result = 31 * result + granades;
+        result = 31 * result + flashes;
+        result = 31 * result + smokes;
+        result = 31 * result + molotovs;
+        result = 31 * result + decoys;
         result = 31 * result + (author != null ? author.hashCode() : 0);
         return result;
     }

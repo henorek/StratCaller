@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#6c6976"
+    tools:context=".TacticActivity" >
+
+    <LinearLayout
+        android:id="@+id/round_text_layout"
+        android:orientation="vertical"
+        android:background="#252323"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="top"
+        >
+
+    <com.example.jarek.stratcaller.widgets.TextViewPlus
+        android:text="@string/starterRound"
+        android:textSize="23sp"
+        android:id="@+id/score_text"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent" android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@id/round_text_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center|top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/tactic_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/tactic_description" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -28,4 +28,8 @@
     <string name="stratDescription">SampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\nSampleDescription SampleDescription\n</string>
     <string name="ctButtonScore">CT</string>
     <string name="ttButtonScore">TT</string>
+
+    <string name="title_activity_tactic">TacticActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

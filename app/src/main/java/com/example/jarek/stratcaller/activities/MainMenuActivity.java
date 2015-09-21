@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.jarek.stratcaller.R;
+import com.example.jarek.stratcaller.data.DatabaseUpdater;
+import com.example.jarek.stratcaller.data.TacticsDAO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +20,9 @@ public class MainMenuActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        DatabaseUpdater databaseUpdaterTask = new DatabaseUpdater(this);
+        databaseUpdaterTask.execute();
 
         Map<Integer, Intent> menu = new HashMap<>();
         menu.put(R.id.new_match_button, new Intent(this, ChooseMapActivity.class));

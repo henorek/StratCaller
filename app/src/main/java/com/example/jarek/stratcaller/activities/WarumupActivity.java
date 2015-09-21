@@ -31,16 +31,13 @@ public class WarumupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warumup);
 
-        DatabaseUpdater databaseUpdaterTask = new DatabaseUpdater(this);
-        databaseUpdaterTask.execute();
-
-        TacticsDAO tacticsDAO = new TacticsDAO(this);
-
         intent = new Intent(this, RoundActivity.class);
 
         bundle = getIntent().getExtras();
         mapChoice = bundle.getString("current map from ChooseMapActivity");
         sideChoice = bundle.getString("current side from ChooseSideActivity");
+        intent.putExtra("current map from WarumupActivity", mapChoice);
+        intent.putExtra("current side from WarumupActivity", sideChoice);
 
         switch(mapChoice) {
             case "de_dust2":
@@ -68,10 +65,6 @@ public class WarumupActivity extends Activity {
                 bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.overpass_minimap);
                 break;
         }
-
-        List<TacticsEntity> sidestrat = tacticsDAO.getData(mapChoice, sideChoice);
-        TacticsEntity test = sidestrat.get(0);
-        Log.e("It's alive!", test.getName());
 
         ZoomableImageView mini_map = (ZoomableImageView) findViewById(R.id.minimap);
         mini_map.setImageBitmap(bitmap);

@@ -1,6 +1,9 @@
 package com.example.jarek.stratcaller.logic;
 
+import com.example.jarek.stratcaller.R;
+
 public class CounterLogic {
+
     private int myCount;
 
     //Construct a counter whose value is zero
@@ -36,5 +39,10 @@ public class CounterLogic {
     //Check for win
     public boolean checkForWin() {
         return myCount == 16;
+    }
+
+    //Check for draw
+    public boolean checkForDraw(CounterLogic ct, CounterLogic tt){
+        return ct.myCount == 15 && tt.myCount == 15;
     }
 }

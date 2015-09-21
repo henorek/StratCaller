@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-class ConnectionsCaretaker {
+public class ConnectionsCaretaker {
 
     //Check if application is able to update local database
     public boolean isUpdatePossible(Context context){
@@ -25,7 +25,7 @@ class ConnectionsCaretaker {
     }
 
     //Check if application is able to reach server
-    private boolean isServerReachable(Context context) {
+    public boolean isServerReachable(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnected()) {
